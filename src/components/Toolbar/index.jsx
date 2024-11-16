@@ -1,7 +1,7 @@
 // toolbar.js
 
 import { nodeTypes } from "../../constants";
-import { DraggableNode } from "../../draggableNode";
+import Draggable from "../Draggable";
 
 const PipelineToolbar = () => {
   return (
@@ -15,7 +15,7 @@ const PipelineToolbar = () => {
         }}
       >
         {nodeTypes.map((nodeType, id) => (
-          <DraggableNode key={id} type={nodeType.type} label={nodeType.label} />
+          <Draggable key={id} type={nodeType.type} label={nodeType.label} />
         ))}
       </div>
     </div>

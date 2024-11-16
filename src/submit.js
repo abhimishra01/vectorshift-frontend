@@ -1,12 +1,19 @@
 // submit.js
-import { shallow } from "zustand/shallow";
 import { useStore } from "./store";
-import { parsePipeline } from "./services/api";
+import { shallow } from "zustand/shallow";
 import { generatePipelinePayload } from "./utils";
 
 export const SubmitButton = () => {
+  const selector = (state) => ({
+    nodes: state.nodes,
+    edges: state.edges,
+    isLoading: state.isLoading,
+    pipelineData: state.pipelineData,
+    parsePipelineData: state.parsePipelineData,
+  });
+
   const { isLoading, nodes, edges, pipelineData, error, parsePipelineData } =
-    useStore();
+    useStore(selector, shallow);
 
   const handleSubmit = () => {
     const payload = generatePipelinePayload(nodes, edges);
