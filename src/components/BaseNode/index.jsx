@@ -1,5 +1,5 @@
 // BaseNode | Abstraction of Nodes
-import { Position } from "reactflow";
+import { Handle } from "reactflow";
 
 const BaseNode = ({ id, data, label, handles, children, styles }) => {
   return (

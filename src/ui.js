@@ -23,7 +23,7 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
-  text: GmailNode,
+  gmail: GmailNode,
 };
 
 const selector = (state) => ({

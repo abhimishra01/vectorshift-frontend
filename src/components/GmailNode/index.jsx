@@ -15,7 +15,7 @@ const GmailNode = ({ id, data = {} }) => {
   const handleSubjectChange = (e) => setSubject(e.target.value);
 
   return (
-    <BaseNode id={id} data={data} label="Gmail Integration" handles={handles}>
+    <BaseNode id={id} data={data} label="Gmail" handles={handles}>
       <div>
         <label>
           To:
@@ -26,7 +26,7 @@ const GmailNode = ({ id, data = {} }) => {
           />
         </label>
         <label>
-          Subject:
+          Sub:
           <input type="text" value={subject} onChange={handleSubjectChange} />
         </label>
       </div>

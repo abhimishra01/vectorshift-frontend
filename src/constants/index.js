@@ -4,19 +4,19 @@ export const nodeTypes = [
     label: "Input",
   },
   {
-    type: "customInput",
-    label: "Input",
+    type: "llm",
+    label: "LLM",
   },
   {
-    type: "customInput",
-    label: "Input",
+    type: "customOutput",
+    label: "Output",
   },
   {
-    type: "customInput",
-    label: "Input",
+    type: "text",
+    label: "Text",
   },
   {
-    type: "customInput",
-    label: "Input",
+    type: "gmail",
+    label: "Gmail",
   },
 ];
