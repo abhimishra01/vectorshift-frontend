@@ -5,8 +5,8 @@ import { Position } from "reactflow";
 const OutputNode = ({ id, data = {} }) => {
   const handles = [
     {
-      type: "source",
-      position: Position.Right,
+      type: "target",
+      position: Position.Left,
       id: "output",
     },
   ];

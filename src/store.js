@@ -63,10 +63,10 @@ export const useStore = create((set, get) => ({
       }),
     });
   },
-  parsePipelineData: async () => {
+  parsePipelineData: async (payload) => {
     set({ isLoading: true, error: null });
     try {
-      const data = await parsePipeline();
+      const data = await parsePipeline(payload);
       set({ pipelineData: data, isLoading: false });
     } catch (error) {
       set({

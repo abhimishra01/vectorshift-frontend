@@ -1,8 +1,13 @@
 import axios from "axios";
 
-export const parsePipeline = async () => {
+export const parsePipeline = async (payload) => {
   try {
-    const response = await axios.get("http://127.0.0.1:8000/pipelines/parse");
+    console.log("PAYLOAD");
+    console.log(payload);
+    const response = await axios.post(
+      "http://127.0.0.1:8000/pipelines/parse",
+      payload
+    );
     console.log(response);
     return response.data;
   } catch (error) {
