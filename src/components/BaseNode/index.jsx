@@ -1,12 +1,24 @@
-// BaseNode | Abstraction of Nodes
+// BaseNode.js
 import { Handle } from "reactflow";
 
 const BaseNode = ({ id, data, label, handles, children, styles }) => {
   return (
     <div
-      style={{ width: 200, height: 80, border: "1px solid black", ...styles }}
+      style={{
+        width: 200,
+        height: 80,
+        border: "1px solid black",
+        borderRadius: "8px",
+        backgroundColor: "#fff",
+        ...styles,
+      }}
     >
-      <div>
+      <div
+        style={{
+          borderBottom: "1px solid #eee",
+          fontWeight: "bold",
+        }}
+      >
         <span>{label}</span>
       </div>
       {children}
@@ -16,7 +28,7 @@ const BaseNode = ({ id, data, label, handles, children, styles }) => {
           type={handle.type}
           position={handle.position}
           id={`${id}-${handle.id}`}
-          style={handle.style}
+          style={{ ...handle.style }}
         />
       ))}
     </div>
