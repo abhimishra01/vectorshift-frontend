@@ -7,6 +7,7 @@ import GmailNode from "./GmailNode";
 import SlackNode from "./SlackNode";
 import TeamsNode from "./TeamsNode";
 import CalcNode from "./CalcNode";
+import WebhookNode from "./WebhookNode";
 
 export {
   LLMNode,
@@ -18,4 +19,5 @@ export {
   SlackNode,
   TeamsNode,
   CalcNode,
+  WebhookNode,
 };

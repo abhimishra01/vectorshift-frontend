@@ -15,6 +15,7 @@ import {
   SlackNode,
   TeamsNode,
   CalcNode,
+  WebhookNode,
 } from "./components/nodes";
 
 import "reactflow/dist/style.css";
@@ -30,6 +31,7 @@ const nodeTypes = {
   slack: SlackNode,
   teams: TeamsNode,
   calc: CalcNode,
+  webhook: WebhookNode,
 };
 
 const selector = (state) => ({

@@ -31,4 +31,8 @@ export const nodeTypes = [
     type: "calc",
     label: "Calc",
   },
+  {
+    type: "webhook",
+    label: "Webhook",
+  },
 ];
