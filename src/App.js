@@ -1,4 +1,4 @@
-import PipelineToolbar from "./toolbar";
+import { PipelineToolbar } from "./components";
 import { PipelineUI } from "./ui";
 import { SubmitButton } from "./submit";
 

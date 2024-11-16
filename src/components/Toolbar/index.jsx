@@ -1,7 +1,7 @@
 // toolbar.js
 
-import { nodeTypes } from "./constants";
-import { DraggableNode } from "./draggableNode";
+import { nodeTypes } from "../../constants";
+import { DraggableNode } from "../../draggableNode";
 
 const PipelineToolbar = () => {
   return (
