@@ -2,10 +2,11 @@
 // Displays the drag-and-drop UI
 // --------------------------------------------------
 
+import "reactflow/dist/style.css";
+import { shallow } from "zustand/shallow";
 import { useState, useRef, useCallback } from "react";
 import ReactFlow, { Controls, Background, MiniMap } from "reactflow";
-import { useStore } from "./store";
-import { shallow } from "zustand/shallow";
+import { useStore } from "../store";
 import {
   InputNode,
   LLMNode,
@@ -16,9 +17,7 @@ import {
   TeamsNode,
   CalcNode,
   WebhookNode,
-} from "./components/nodes";
-
-import "reactflow/dist/style.css";
+} from "../components/nodes";
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
