@@ -3,8 +3,10 @@ import BaseNode from "../BaseNode";
 import { Position } from "reactflow";
 
 const GmailNode = ({ id, data = {} }) => {
-  const [subject, setSubject] = useState(data.subject || "");
-  const [recipient, setRecipient] = useState(data.recipient || "");
+  const [subject, setSubject] = useState(data.subject || "Pipeline Demo");
+  const [recipient, setRecipient] = useState(
+    data.recipient || "customers@vectorshift.ai"
+  );
 
   const handles = [
     { type: "target", position: Position.Left, id: "trigger" },
