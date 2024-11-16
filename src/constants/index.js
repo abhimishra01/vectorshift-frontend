@@ -27,4 +27,8 @@ export const nodeTypes = [
     type: "teams",
     label: "Teams",
   },
+  {
+    type: "calc",
+    label: "Calculation",
+  },
 ];

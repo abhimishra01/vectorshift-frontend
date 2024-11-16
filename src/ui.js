@@ -28,6 +28,7 @@ const nodeTypes = {
   gmail: GmailNode,
   slack: SlackNode,
   teams: TeamsNode,
+  calc: CalcNode,
 };
 
 const selector = (state) => ({
