@@ -4,7 +4,7 @@ import { SubmitButton } from "./submit";
 
 function App() {
   return (
-    <div className="gradient">
+    <div>
       <PipelineToolbar />
       <PipelineUI />
       <SubmitButton />
