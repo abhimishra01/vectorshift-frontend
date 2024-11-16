@@ -14,6 +14,7 @@ import {
   GmailNode,
   SlackNode,
   TeamsNode,
+  CalcNode,
 } from "./components/nodes";
 
 import "reactflow/dist/style.css";

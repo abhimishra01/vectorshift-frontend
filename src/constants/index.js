@@ -29,6 +29,6 @@ export const nodeTypes = [
   },
   {
     type: "calc",
-    label: "Calculation",
+    label: "Calc",
   },
 ];

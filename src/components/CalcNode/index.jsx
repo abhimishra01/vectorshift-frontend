@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Position } from "reactflow";
-import BaseNode from "../nodes";
+import { BaseNode } from "../nodes";
 
-const CalcNode = ({ id, data = {} }) => {
+const CalcNode = ({ id, data = {}, label }) => {
   const [operation, setOperation] = useState(data.operation || "add");
   const handles = [
     { type: "target", position: Position.Left, id: "input1" },
@@ -18,7 +18,7 @@ const CalcNode = ({ id, data = {} }) => {
   const handleOperationChange = (e) => setOperation(e.target.value);
 
   return (
-    <BaseNode id={id} data={data} label="Calculation" handles={handles}>
+    <BaseNode id={id} data={data} label="Calc" handles={handles}>
       <div>
         <label>
           Calc:
