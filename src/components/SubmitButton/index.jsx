@@ -1,9 +1,10 @@
-// submit.js
-import { useStore } from "./store";
-import { shallow } from "zustand/shallow";
-import { generatePipelinePayload } from "./utils";
+// Submit
 
-export const SubmitButton = () => {
+import { shallow } from "zustand/shallow";
+import { useStore } from "../../store";
+import { generatePipelinePayload } from "../../utils";
+
+const SubmitButton = () => {
   const selector = (state) => ({
     nodes: state.nodes,
     edges: state.edges,
@@ -48,3 +49,5 @@ export const SubmitButton = () => {
     </div>
   );
 };
+
+export default SubmitButton;

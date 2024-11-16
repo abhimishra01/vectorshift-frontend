@@ -1,3 +1,4 @@
 import PipelineToolbar from "./Toolbar";
+import SubmitButton from "./SubmitButton";
 
-export { PipelineToolbar };
+export { PipelineToolbar, SubmitButton };

@@ -44,7 +44,7 @@ const selector = (state) => ({
   onConnect: state.onConnect,
 });
 
-export const PipelineUI = () => {
+const PipelineUI = () => {
   const reactFlowWrapper = useRef(null);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
   const {
@@ -127,3 +127,5 @@ export const PipelineUI = () => {
     </>
   );
 };
+
+export default PipelineUI;
