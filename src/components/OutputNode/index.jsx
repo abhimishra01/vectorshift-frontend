@@ -1,6 +1,6 @@
 import { useState } from "react";
 import BaseNode from "../BaseNode";
-import { Handle, Position } from "reactflow";
+import { Position } from "reactflow";
 
 const OutputNode = ({ id, data = {} }) => {
   const handles = [

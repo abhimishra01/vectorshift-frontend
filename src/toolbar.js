@@ -1,8 +1,9 @@
 // toolbar.js
 
+import { nodeTypes } from "./constants";
 import { DraggableNode } from "./draggableNode";
 
-export const PipelineToolbar = () => {
+const PipelineToolbar = () => {
   return (
     <div style={{ padding: "10px" }}>
       <div
@@ -13,12 +14,12 @@ export const PipelineToolbar = () => {
           gap: "10px",
         }}
       >
-        <DraggableNode type="customInput" label="Input" />
-        <DraggableNode type="llm" label="LLM" />
-        <DraggableNode type="customOutput" label="Output" />
-        <DraggableNode type="text" label="Text" />
-        <DraggableNode type="primary" label="Primary" />
+        {nodeTypes.map((nodeType) => (
+          <DraggableNode type={nodeType.type} label={nodeType.label} />
+        ))}
       </div>
     </div>
   );
 };
+
+export default PipelineToolbar;
