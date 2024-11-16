@@ -2,8 +2,9 @@
 
 import { useEffect } from "react";
 import { shallow } from "zustand/shallow";
-import { useStore } from "../../store";
-import { generatePipelinePayload } from "../../utils";
+
+import { useStore } from "@store";
+import { generatePipelinePayload } from "@utils";
 
 const SubmitButton = () => {
   const selector = (state) => ({

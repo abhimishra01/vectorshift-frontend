@@ -1,6 +1,7 @@
-import BaseNode from "../BaseNode";
 import { useState } from "react";
 import { Position } from "reactflow";
+
+import { BaseNode } from "@components/nodes";
 
 const SlackNode = ({ id, data = {} }) => {
   const [channel, setChannel] = useState(data.channel || "");

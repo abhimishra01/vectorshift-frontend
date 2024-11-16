@@ -1,4 +1,4 @@
-// store.js
+// Store
 
 import { create } from "zustand";
 import {
@@ -7,7 +7,7 @@ import {
   applyEdgeChanges,
   MarkerType,
 } from "reactflow";
-import { parsePipeline } from "./services/api";
+import { parsePipeline } from "@services/api";
 
 export const useStore = create((set, get) => ({
   nodes: [],

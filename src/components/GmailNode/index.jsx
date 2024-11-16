@@ -1,6 +1,7 @@
 import { useState } from "react";
-import BaseNode from "../BaseNode";
 import { Position } from "reactflow";
+
+import { BaseNode } from "@components/nodes";
 
 const GmailNode = ({ id, data = {} }) => {
   const [subject, setSubject] = useState(data.subject || "Pipeline Demo");

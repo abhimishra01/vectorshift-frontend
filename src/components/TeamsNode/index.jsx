@@ -1,6 +1,7 @@
 import { useState } from "react";
-import BaseNode from "../BaseNode";
 import { Position } from "reactflow";
+
+import { BaseNode } from "@components/nodes";
 
 const TeamsNode = ({ id, data = {} }) => {
   const [teamId, setTeamId] = useState(data.teamId || "");

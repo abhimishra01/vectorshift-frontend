@@ -1,7 +1,8 @@
 // TextNode.js
 import { useState, useEffect } from "react";
 import { Position } from "reactflow";
-import BaseNode from "../BaseNode";
+
+import { BaseNode } from "@components/nodes";
 
 const TextNode = ({ id, data }) => {
   const [currText, setCurrText] = useState(data?.text || "{{input}}");

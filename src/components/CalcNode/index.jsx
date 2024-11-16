@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Position } from "reactflow";
-import { BaseNode } from "../nodes";
+
+import { BaseNode } from "@components/nodes";
 
 const CalcNode = ({ id, data = {}, label }) => {
   const [operation, setOperation] = useState(data.operation || "add");
