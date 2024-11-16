@@ -17,6 +17,11 @@ const SubmitButton = () => {
     useStore(selector, shallow);
 
   const handleSubmit = () => {
+    if (nodes.length === 0 || edges.length === 0) {
+      alert("Please generate nodes!");
+      return;
+    }
+
     const payload = generatePipelinePayload(nodes, edges);
     parsePipelineData(payload);
   };
