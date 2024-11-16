@@ -19,4 +19,12 @@ export const nodeTypes = [
     type: "gmail",
     label: "Gmail",
   },
+  {
+    type: "slack",
+    label: "Slack",
+  },
+  //   {
+  //     type: "teams",
+  //     label: "Teams",
+  //   },
 ];

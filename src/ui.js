@@ -12,6 +12,7 @@ import {
   OutputNode,
   TextNode,
   GmailNode,
+  SlackNode,
 } from "./components/nodes";
 
 import "reactflow/dist/style.css";
@@ -24,6 +25,7 @@ const nodeTypes = {
   customOutput: OutputNode,
   text: TextNode,
   gmail: GmailNode,
+  slack: SlackNode,
 };
 
 const selector = (state) => ({

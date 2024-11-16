@@ -3,31 +3,28 @@ import { useState } from "react";
 import { Position } from "reactflow";
 
 const SlackNode = ({ id, data = {} }) => {
-  const [channel, setchannel] = useState(data.channel || "");
-  const [recipient, setRecipient] = useState(data.recipient || "");
+  const [channel, setChannel] = useState(data.channel || "");
+  const [message, setMessage] = useState(data.message || "");
 
   const handles = [
     { type: "target", position: Position.Left, id: "trigger" },
     { type: "source", position: Position.Right, id: "status" },
   ];
 
-  const handleRecipientChange = (e) => setRecipient(e.target.value);
-  const handlechannelChange = (e) => setchannel(e.target.value);
+  const handleMessageChange = (e) => setMessage(e.target.value);
+  const handleChannelChange = (e) => setChannel(e.target.value);
 
   return (
-    <BaseNode id={id} data={data} label="Gmail" handles={handles}>
+    <BaseNode id={id} data={data} label="Slack" handles={handles}>
       <div>
         <label>
-          To:
-          <input
-            type="email"
-            value={recipient}
-            onChange={handleRecipientChange}
-          />
+          Text
+          <input type="text" value={message} onChange={handleMessageChange} />
         </label>
         <label>
-          Sub:
-          <input type="text" value={channel} onChange={handlechannelChange} />
+          Dest:
+          {/* channel / person dm */}
+          <input type="text" value={channel} onChange={handleChannelChange} />
         </label>
       </div>
     </BaseNode>
