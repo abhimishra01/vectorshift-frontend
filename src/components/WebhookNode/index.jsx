@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Position } from "reactflow";
-import BaseNode from "../BaseNode";
+
+import { BaseNode } from "@components/nodes";
 
 const WebhookNode = ({ id, data = {} }) => {
   const [url, setUrl] = useState(data.url || "");

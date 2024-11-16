@@ -1,5 +1,5 @@
-import PipelineUI from "../UI";
-import { PipelineToolbar, SubmitButton } from "../../components";
+import PipelineUI from "@features/UI";
+import { PipelineToolbar, SubmitButton } from "@components";
 
 function App() {
   return (

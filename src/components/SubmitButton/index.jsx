@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { shallow } from "zustand/shallow";
+import Button from "@mui/joy/Button";
 
 import { useStore } from "@store";
 import { generatePipelinePayload } from "@utils";
@@ -49,9 +50,16 @@ const SubmitButton = () => {
         justifyContent: "center",
       }}
     >
-      <button onClick={handleSubmit} disabled={isLoading}>
-        {isLoading ? "Loading..." : "Submit"}
-      </button>
+      <Button
+        sx={{
+          backgroundColor: "#5045E5",
+        }}
+        onClick={handleSubmit}
+        disabled={isLoading}
+        loading={isLoading}
+      >
+        Submit
+      </Button>
     </div>
   );
 };
