@@ -1,42 +1,57 @@
-// inputNode.js
-
 import { useState } from "react";
+import BaseNode from "../BaseNode";
 import { Handle, Position } from "reactflow";
 
-const InputNode = ({ id, data }) => {
+const InputNode = ({ id, data = {} }) => {
+  const handles = [
+    {
+      type: "source",
+      position: Position.Right,
+      id: "input",
+    },
+  ];
+
   const [currName, setCurrName] = useState(
-    data?.inputName || id.replace("customInput-", "input_")
+    data.inputName || id.replace("customInput-", "input_")
   );
   const [inputType, setInputType] = useState(data.inputType || "Text");
 
   const handleNameChange = (e) => {
     setCurrName(e.target.value);
+
+    if (data.onChange) {
+      data.onChange({ ...data, inputName: e.target.value });
+    }
   };
 
   const handleTypeChange = (e) => {
     setInputType(e.target.value);
+
+    if (data.onChange) {
+      data.onChange({ ...data, inputType: e.target.value });
+    }
   };
 
   return (
-    <div style={{ width: 200, height: 80, border: "1px solid black" }}>
+    <BaseNode id={id} data={data} label="Input" handles={handles}>
       <div>
-        <span>Input</span>
+        <div>
+          <label>
+            Input:
+            <input type="text" value={currName} onChange={handleNameChange} />
+          </label>
+        </div>
+        <div>
+          <label>
+            Type:
+            <select value={inputType} onChange={handleTypeChange}>
+              <option value="Text">Text</option>
+              <option value="File">File</option>
+            </select>
+          </label>
+        </div>
       </div>
-      <div>
-        <label>
-          Name:
-          <input type="text" value={currName} onChange={handleNameChange} />
-        </label>
-        <label>
-          Type:
-          <select value={inputType} onChange={handleTypeChange}>
-            <option value="Text">Text</option>
-            <option value="File">File</option>
-          </select>
-        </label>
-      </div>
-      <Handle type="source" position={Position.Right} id={`${id}-value`} />
-    </div>
+    </BaseNode>
   );
 };
 

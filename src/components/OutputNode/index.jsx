@@ -1,42 +1,57 @@
-// outputNode.js
-
 import { useState } from "react";
+import BaseNode from "../BaseNode";
 import { Handle, Position } from "reactflow";
 
-const OutputNode = ({ id, data }) => {
+const OutputNode = ({ id, data = {} }) => {
+  const handles = [
+    {
+      type: "source",
+      position: Position.Right,
+      id: "output",
+    },
+  ];
+
   const [currName, setCurrName] = useState(
-    data?.outputName || id.replace("customOutput-", "output_")
+    data.outputName || id.replace("customOutput-", "output_")
   );
   const [outputType, setOutputType] = useState(data.outputType || "Text");
 
   const handleNameChange = (e) => {
     setCurrName(e.target.value);
+
+    if (data.onChange) {
+      data.onChange({ ...data, outputName: e.target.value });
+    }
   };
 
   const handleTypeChange = (e) => {
     setOutputType(e.target.value);
+
+    if (data.onChange) {
+      data.onChange({ ...data, outputType: e.target.value });
+    }
   };
 
   return (
-    <div style={{ width: 200, height: 80, border: "1px solid black" }}>
-      <Handle type="target" position={Position.Left} id={`${id}-value`} />
+    <BaseNode id={id} data={data} label="Output" handles={handles}>
       <div>
-        <span>Output</span>
+        <div>
+          <label>
+            Output:
+            <output type="text" value={currName} onChange={handleNameChange} />
+          </label>
+        </div>
+        <div>
+          <label>
+            Type:
+            <select value={outputType} onChange={handleTypeChange}>
+              <option value="Text">Text</option>
+              <option value="File">File</option>
+            </select>
+          </label>
+        </div>
       </div>
-      <div>
-        <label>
-          Name:
-          <input type="text" value={currName} onChange={handleNameChange} />
-        </label>
-        <label>
-          Type:
-          <select value={outputType} onChange={handleTypeChange}>
-            <option value="Text">Text</option>
-            <option value="File">Image</option>
-          </select>
-        </label>
-      </div>
-    </div>
+    </BaseNode>
   );
 };
 
