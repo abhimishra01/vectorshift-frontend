@@ -5,6 +5,7 @@ import TextNode from "./TextNode";
 import BaseNode from "./BaseNode";
 import GmailNode from "./GmailNode";
 import SlackNode from "./SlackNode";
+import TeamsNode from "./TeamsNode";
 
 export {
   LLMNode,
@@ -14,4 +15,5 @@ export {
   BaseNode,
   GmailNode,
   SlackNode,
+  TeamsNode,
 };

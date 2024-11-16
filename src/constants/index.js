@@ -23,8 +23,8 @@ export const nodeTypes = [
     type: "slack",
     label: "Slack",
   },
-  //   {
-  //     type: "teams",
-  //     label: "Teams",
-  //   },
+  {
+    type: "teams",
+    label: "Teams",
+  },
 ];
