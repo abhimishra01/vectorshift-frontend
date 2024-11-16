@@ -14,8 +14,8 @@ const PipelineToolbar = () => {
           gap: "10px",
         }}
       >
-        {nodeTypes.map((nodeType) => (
-          <DraggableNode type={nodeType.type} label={nodeType.label} />
+        {nodeTypes.map((nodeType, id) => (
+          <DraggableNode key={id} type={nodeType.type} label={nodeType.label} />
         ))}
       </div>
     </div>
