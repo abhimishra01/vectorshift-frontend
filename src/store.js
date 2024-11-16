@@ -65,17 +65,14 @@ export const useStore = create((set, get) => ({
   },
   parsePipelineData: async (payload) => {
     set({ isLoading: true, error: null });
-    try {
-      const data = await parsePipeline(payload);
-      set({ pipelineData: data, isLoading: false });
-    } catch (error) {
+    const response = await parsePipeline(payload);
+    if (response.isError) {
       set({
-        error:
-          error?.response?.data?.message ||
-          error.message ||
-          "Something went wrong!",
+        error: response.message || "Something went wrong!",
         isLoading: false,
       });
+    } else {
+      set({ pipelineData: response.data, isLoading: false });
     }
   },
 }));

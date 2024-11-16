@@ -1,5 +1,6 @@
 // Submit
 
+import { useEffect } from "react";
 import { shallow } from "zustand/shallow";
 import { useStore } from "../../store";
 import { generatePipelinePayload } from "../../utils";
@@ -11,6 +12,7 @@ const SubmitButton = () => {
     isLoading: state.isLoading,
     pipelineData: state.pipelineData,
     parsePipelineData: state.parsePipelineData,
+    error: state.error,
   });
 
   const { isLoading, nodes, edges, pipelineData, error, parsePipelineData } =
@@ -26,6 +28,18 @@ const SubmitButton = () => {
     parsePipelineData(payload);
   };
 
+  useEffect(() => {
+    if (error === null) return;
+    alert(error);
+  }, [error]);
+
+  useEffect(() => {
+    if (pipelineData === null) return;
+    alert(
+      `No. of Nodes: ${pipelineData.num_nodes}\nNo. of Edges: ${pipelineData.num_edges}\n`
+    );
+  }, [pipelineData]);
+
   return (
     <div
       style={{
@@ -37,20 +51,6 @@ const SubmitButton = () => {
       <button onClick={handleSubmit} disabled={isLoading}>
         {isLoading ? "Loading..." : "Submit"}
       </button>
-
-      {pipelineData && (
-        <div>
-          <p>No. of Nodes: {pipelineData.num_nodes}</p>
-          <p>No. of Edges: {pipelineData.num_edges}</p>
-          <p>Is DAG?: {pipelineData.is_dag ? "Yes" : "No"}</p>
-        </div>
-      )}
-
-      {error && (
-        <div>
-          <p>{error}</p>
-        </div>
-      )}
     </div>
   );
 };

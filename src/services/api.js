@@ -6,8 +6,8 @@ export const parsePipeline = async (payload) => {
       "http://127.0.0.1:8000/pipelines/parse",
       payload
     );
-    return response.data;
+    return { isError: false, data: response.data };
   } catch (error) {
-    return error.message;
+    return { isError: true, message: error.message };
   }
 };
